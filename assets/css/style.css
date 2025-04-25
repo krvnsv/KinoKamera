@@ -1,5 +1,6 @@
 /* FONTS */
 @import url(../css/clash-display.css);
+/* @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap'); */
 
 /* VARIABLES */
 :root {
@@ -10,6 +11,7 @@
     --c-brand-rgb: 78, 87, 212;
     --c-body: black;
     --font-base: "ClashDisplay", sans-serif;
+    /* --font-base: "Courier Prime", monospace; */
     --box-shadow: 0px 15px 25px rgba(0,0,0,0.08);
     --transition: all 2s ease;
 }
@@ -90,6 +92,16 @@ img {
     color: var(--c-brand);
 }
 
+/* Make hamburger menu white */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
 
 /* BTN */
 .btn {
@@ -115,10 +127,6 @@ img {
 
 /* HERO */
 #hero {
-    /* background: url(../images/hero-1.jpg);
-    background-position: center;
-    background-size: cover; */
-
     background: url('../images/hero-1.jpg') center center / cover no-repeat fixed;
     height: 50vh;
     position: relative;
@@ -127,7 +135,16 @@ img {
     justify-content: center;
     color: white;
     text-align: center;
-    
+}
+
+/* Make background behave better on mobile */
+@media screen and (max-width: 768px) {
+    .parallax-section,
+    #hero {
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
+    }
 }
 
 
@@ -201,6 +218,14 @@ img {
     text-align: center;
 }
 
+@media screen and (max-width: 768px) {
+    .parallax-section {
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
+    }
+}
+
 .parallax-section h1 {
     color: white;
 }
@@ -230,15 +255,12 @@ img {
 /* FOOTER */
 footer {
     padding-top: 30px;
+    background-color: black;
 }
 
-.footer-top {
-    padding-bottom: 40px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
 
 .footer-bottom {
-    padding-top: 40px;
+    padding-top: 25px;
     padding-bottom: 40px;
 }
 
@@ -258,7 +280,7 @@ footer .line {
     width: 40px;
     height: 4px;
     background-color: var(--c-brand);
-    margin-top: 12px;
+    margin-top: 10px;
     margin-bottom: 24px;
 }
 
