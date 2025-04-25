@@ -115,9 +115,19 @@ img {
 
 /* HERO */
 #hero {
-    background: url(../images/hero-1.jpg);
+    /* background: url(../images/hero-1.jpg);
     background-position: center;
-    background-size: cover;
+    background-size: cover; */
+
+    background: url('../images/hero-1.jpg') center center / cover no-repeat fixed;
+    height: 50vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    
 }
 
 
@@ -175,6 +185,23 @@ img {
 }
 
 #portfolio h1 {
+    color: white;
+}
+
+/* STORIES THAT MATTER */
+
+.parallax-section {
+    background: url('../images/hero-2.jpg') center center / cover no-repeat fixed;
+    height: 50vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.parallax-section h1 {
     color: white;
 }
 
