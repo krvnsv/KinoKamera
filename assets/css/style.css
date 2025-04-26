@@ -7,7 +7,7 @@
     --c-bright: white;
     --c-dark: black;
     --c-brand: rgb(255, 225, 0);
-    --c-brand-light: #f0ac36;
+    --c-brand-light: #f3ce13;
     --c-brand-rgb: 78, 87, 212;
     --c-body: black;
     --font-base: "ClashDisplay", sans-serif;
@@ -244,13 +244,14 @@ img {
 }
 
 
-/* TEAM */
+/* ABOUT */
 
 .circular-img {
     border-radius: 50%;
     overflow: hidden;
-    width: 550px;
-    height: 550px;
+    width: 100%; /* Change from fixed width to percentage */
+    max-width: 550px; /* Maximum width on larger screens */
+    aspect-ratio: 1 / 1; /* Maintains perfect circle regardless of size */
     margin: 0 auto;
 }
 
@@ -309,7 +310,9 @@ footer .line {
     color: white;
 }
 
+
 /* PORTFOLIO PAGE STYLES */
+
 .production-item {
     margin-bottom: 60px;
     margin-top: 60px;
@@ -326,11 +329,6 @@ footer .line {
     overflow: hidden;
 }
 
-/* @media screen and (max-width: 768px) {
-    .production-poster {
-      height: 600px;
-    }
-  } */
 
 .production-poster img {
     object-fit: cover;
@@ -381,11 +379,16 @@ footer .line {
 /* Media queries for production items */
 @media screen and (max-width: 768px) {
     .production-poster {
-        height: 600px;
+        height: 500px;
         margin-bottom: 30px;
+        /* Center alignment for smaller screens */
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     
-    /* .production-info strong {
-        width: 100px;
-    } */
+    .production-poster img {
+        width: 100%;
+        max-width: 350px;
+    }
 }
