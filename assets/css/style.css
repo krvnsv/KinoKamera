@@ -7,7 +7,7 @@
     --c-bright: white;
     --c-dark: black;
     --c-brand: rgb(255, 225, 0);
-    --c-brand-light: #ddb369;
+    --c-brand-light: #f0ac36;
     --c-brand-rgb: 78, 87, 212;
     --c-body: black;
     --font-base: "ClashDisplay", sans-serif;
@@ -65,13 +65,22 @@ img {
 }
 
 .image-zoom-wrapper {
+    height: 400px;
     overflow: hidden;
-    position: relative;
-}
-
-.image-zoom-wrapper img{
-     transition: var(--transition);
-}
+  }
+  
+  .image-zoom-wrapper img {
+    transition: var(--transition);
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .image-zoom-wrapper {
+      height: 600px;
+    }
+  }
 
 .image-zoom:hover .image-zoom-wrapper img {
     transform: scale(1.15);
