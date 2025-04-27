@@ -392,3 +392,85 @@ footer .line {
         max-width: 350px;
     }
 }
+
+
+/* Modal Styling with More Rounded Corners */
+.modal-dialog {
+    max-width: 800px;
+    margin: 1.75rem auto;
+}
+
+.modal-content {
+    background-color: var(--c-bright);
+    border-radius: 1rem !important; /* Much more rounded corners */
+    border: none;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--c-dark);
+    color: var(--c-bright);
+    border-top-left-radius: 1rem !important; /* Match top corners */
+    border-top-right-radius: 1rem !important;
+    border-bottom-left-radius: 0; /* No rounding on bottom of header */
+    border-bottom-right-radius: 0;
+    padding: 1rem;
+}
+
+.modal-title {
+    font-family: var(--font-base);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.modal-body {
+    padding: 0;
+    background-color: var(--c-bright);
+}
+
+.modal-body .ratio iframe {
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* Black background for video */
+}
+
+.modal-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--c-dark);
+    height: 56px;
+    border-bottom-left-radius: 1rem !important; /* Match bottom corners */
+    border-bottom-right-radius: 1rem !important;
+    border-top-left-radius: 0; /* No rounding on top of footer */
+    border-top-right-radius: 0;
+    padding: 0 1rem;
+}
+
+.btn-close {
+    filter: invert(1); /* White close button for dark header */
+    opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .modal-dialog {
+        margin: 0.5rem;
+        max-width: calc(100% - 1rem);
+    }
+    
+    /* Maintain rounded corners on mobile */
+    .modal-content {
+        border-radius: 1rem !important;
+    }
+    
+    .modal-header {
+        border-top-left-radius: 1rem !important;
+        border-top-right-radius: 1rem !important;
+    }
+    
+    .modal-footer {
+        border-bottom-left-radius: 1rem !important;
+        border-bottom-right-radius: 1rem !important;
+    }
+}

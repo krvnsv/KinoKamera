@@ -10,3 +10,17 @@ AOS.init({
   anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 
 });
+
+
+// Stop YouTube video when modal is closed
+document.addEventListener('DOMContentLoaded', function () {
+  const modals = document.querySelectorAll('.modal');
+  modals.forEach(function (modal) {
+      modal.addEventListener('hidden.bs.modal', function () {
+          const iframe = modal.querySelector('iframe');
+          if (iframe) {
+              iframe.src = iframe.src; // Reset src to stop playback
+          }
+      });
+  });
+});
