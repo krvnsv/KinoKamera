@@ -6,7 +6,7 @@
 :root {
     --c-bright: white;
     --c-dark: black;
-    --c-brand: rgb(255, 225, 0);
+    --c-brand: #f3ce13;
     --c-brand-light: #f3ce13;
     --c-brand-rgb: 78, 87, 212;
     --c-body: black;
@@ -87,14 +87,19 @@ img {
 }
 
 
-/* NAVBAR */
 .navbar {
     box-shadow: var(--box-shadow);
 }
 
 .navbar-nav .nav-link {
+    font-family: var(--font-heading);
     font-weight: 500;
     color: var(--c-bright);
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--c-brand);
 }
 
 .navbar-nav .nav-link.active {
@@ -109,6 +114,8 @@ img {
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
+
+
 
 
 
@@ -137,12 +144,12 @@ img {
 /* HERO */
 #hero {
     background: url('../images/hero-6.jpg') center center / cover no-repeat fixed;
-    height: 80vh;
+    height: 50vh;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: rgb(255, 255, 255);
     text-align: center;
 }
 #hero::after {
@@ -152,7 +159,7 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* black overlay with 0.2 opacity */
+    background-color: rgba(0, 0, 0, 0.2); /* black overlay with 0.2 opacity */
     z-index: 1;
 }
 
@@ -247,6 +254,23 @@ img {
     text-align: center;
 }
 
+.parallax-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* black overlay with 0.2 opacity */
+    z-index: 1;
+}
+
+/* Make sure your text is above the overlay */
+.parallax-section > * {
+    position: relative;
+    z-index: 2;
+}
+
 @media screen and (max-width: 768px) {
     .parallax-section {
         background-attachment: scroll;
@@ -266,7 +290,7 @@ img {
     border-radius: 50%;
     overflow: hidden;
     width: 100%; /* Change from fixed width to percentage */
-    max-width: 550px; /* Maximum width on larger screens */
+    max-width: 450px; /* Maximum width on larger screens */
     aspect-ratio: 1 / 1; /* Maintains perfect circle regardless of size */
     margin: 0 auto;
 }
@@ -281,21 +305,32 @@ img {
 
 /* FOOTER */
 footer {
-    padding-top: 30px;
+    padding-top: 20px;
     background-color: black;
 }
 
-
-.footer-bottom {
-    padding-top: 25px;
-    padding-bottom: 40px;
+.footer-top {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
+.footer-bottom {
+    padding-top: 15px;
+    padding-bottom: 25px;
+}
+
+.footer-divider {
+    border-color: rgb(255, 255, 255);
+    margin-top: 0;
+    margin-bottom: 10px;
+    opacity: 0.2;
+}
 
 footer li,
 footer p,
 footer a {
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
 }
 
 footer ul {
@@ -303,21 +338,13 @@ footer ul {
     padding: 0;
 }
 
-footer .line {
-    width: 40px;
-    height: 4px;
-    background-color: var(--c-brand);
-    margin-top: 10px;
-    margin-bottom: 24px;
-}
-
 .social-icons a {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 100px;
 }
 
