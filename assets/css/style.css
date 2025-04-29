@@ -13,7 +13,8 @@
     --font-base: "ClashDisplay", sans-serif;
     /* --font-base: "Courier Prime", monospace; */
     --box-shadow: 0px 15px 25px rgba(0,0,0,0.08);
-    --transition: all 2s ease;
+    --transition: all 0.2s ease;
+    font-size: 16px;
 }
 
 /* RESET & HELPERS */
@@ -43,6 +44,13 @@ a:hover {
 img {
     max-width: 100%;
     height: auto;
+}
+
+p{
+    font-size: 20px;
+    max-width: 1000px; /* Adjust this value to your preferred width */
+    margin-left: auto;
+    margin-right: auto; /* These two lines will center the paragraphs */
 }
 
 .logo-img {
@@ -232,6 +240,11 @@ img {
     top: 50%;
 }
 
+.section-title {
+    margin-bottom: 80px; /* Adjust value as needed */
+}
+
+
 #portfolio {
     background-color: black;
 }
@@ -266,7 +279,7 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(243, 206, 19, 0.5); /* Brand color with very low opacity */
+    background-color: rgba(243, 206, 19, 0.05);
     opacity: 0;
     transition: opacity 0.2s ease;
 }
@@ -281,8 +294,7 @@ img {
     transition: transform 1s ease;
 }
 
-/* STORIES THAT MATTER */
-
+/* STORIS THAT MATTER */
 .parallax-section {
     background: url('../images/hero-2.jpg') center center / cover no-repeat fixed;
     height: 50vh;
@@ -294,9 +306,20 @@ img {
     text-align: center;
 }
 
+.parallax-section-2 {
+    background: url('../images/hero-10.jpg') center center / cover no-repeat fixed;
+    height: 50vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
 
-/* grayscale for paralax*/
-.parallax-section::before {
+/* Grayscale overlay */
+.parallax-section::before,
+.parallax-section-2::before {
     content: '';
     position: absolute;
     top: 0;
@@ -308,42 +331,45 @@ img {
     z-index: 0;
 }
 
-.parallax-section > * {
-    position: relative;
-    z-index: 1;
-}
-
-.parallax-section::after {
+/* Dark overlay */
+.parallax-section::after,
+.parallax-section-2::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* black overlay with 0.2 opacity */
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: 1;
 }
 
-.highlight {
-    color: #f3ce13; /* or use var(--c-brand) if you have a variable */
-}
-
-/* Make sure your text is above the overlay */
-.parallax-section > * {
+/* Make sure content is above overlays */
+.parallax-section > *,
+.parallax-section-2 > * {
     position: relative;
     z-index: 2;
 }
 
+/* Text color */
+.parallax-section h1,
+.parallax-section-2 h1 {
+    color: white;
+}
+
+/* Mobile fix */
 @media screen and (max-width: 768px) {
-    .parallax-section {
+    .parallax-section,
+    .parallax-section-2 {
         background-attachment: scroll;
         background-position: center center;
         background-size: cover;
     }
 }
 
-.parallax-section h1 {
-    color: white;
+/* Highlight color */
+.highlight {
+    color: #f3ce13;
 }
 
 
@@ -472,7 +498,7 @@ footer ul {
 
 .production-info strong {
     display: inline-block;
-    width: 120px;
+    width: 160px;
     font-weight: 600;
 }
 
