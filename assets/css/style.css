@@ -555,7 +555,6 @@ footer ul {
     border: none;
     box-shadow: var(--box-shadow);
     overflow: hidden;
-    aspect-ratio: 16 / 9;
 
 }
 
@@ -581,10 +580,22 @@ footer ul {
     background-color: var(--c-bright);
 }
 
+.modal-body .ratio {
+    margin: 0; /* Ensure no extra margins are interfering */
+    margin-top: -20px;
+}
+
+.modal-body::after {
+    content: '';
+    display: block;
+    padding-bottom: 40px; /* Adjust this value to match the top black space */
+    background-color: #000;
+}
+
 .modal-body .ratio iframe {
     width: 100%;
     height: 100%;
-    background-color: #000; /* Black background for video */
+    background-color: #000; /* Black background for  */
 }
 
 .modal-footer {
