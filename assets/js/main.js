@@ -24,3 +24,33 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   });
 });
+
+
+
+document.querySelectorAll('.open-video').forEach(el => {
+  el.addEventListener('click', function () {
+    const videoUrl = this.getAttribute('data-video') + '?autoplay=1';
+    const targetId = this.getAttribute('data-target');
+    const container = document.querySelector(targetId);
+
+    if (container) {
+      const iframe = document.createElement('iframe');
+      iframe.src = videoUrl;
+      iframe.classList.add('w-100', 'h-100');
+      iframe.setAttribute('allowfullscreen', '');
+      iframe.setAttribute('frameborder', '0');
+      iframe.setAttribute('allow', 'autoplay; encrypted-media');
+
+      container.innerHTML = ''; // clear any old iframe
+      container.appendChild(iframe);
+    }
+  });
+});
+
+// Clear all video containers on any modal hide
+document.querySelectorAll('.modal').forEach(modal => {
+  modal.addEventListener('hidden.bs.modal', () => {
+    const container = modal.querySelector('[id^="videoContainer"]');
+    if (container) container.innerHTML = '';
+  });
+});
