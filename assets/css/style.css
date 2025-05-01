@@ -57,6 +57,11 @@ p{
     height: 20px;
     width: auto;
 }
+.logo-img-gray {
+    height: 20px;
+    width: auto;
+    filter: grayscale(100%);
+}
 
 .section-padding {
     padding-top: 100px;
@@ -74,7 +79,7 @@ p{
 }
 
 .image-zoom-wrapper {
-    height: 400px;
+    height: 440px;
     overflow: hidden;
   }
   
@@ -280,7 +285,7 @@ p{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(243, 206, 19, 0.5); 
+    background-color: rgba(243, 206, 19, 0.7); 
     opacity: 0;
     transition: opacity 0.2s ease;
 }
@@ -408,18 +413,18 @@ p{
 
 /* FOOTER */
 footer {
-    padding-top: 20px;
+    padding-top: 15px; /* Reduced from 20px to 15px */
     background-color: black;
 }
 
 .footer-top {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 15px; /* Reduced from 20px to 15px */
+    padding-bottom: 15px; /* Reduced from 20px to 15px */
 }
 
 .footer-bottom {
-    padding-top: 15px;
-    padding-bottom: 25px;
+    padding-top: 10px; /* Reduced from 15px to 10px */
+    padding-bottom: 20px; /* Reduced from 25px to 20px */
 }
 
 .footer-divider {
@@ -523,6 +528,56 @@ footer ul {
     background-color: var(--c-brand);
     border-color: var(--c-brand);
     color: var(--c-dark);
+}
+
+/* Footer adjustments for small screens */
+@media screen and (max-width: 767px) {
+    /* Footer Top: Stack and center address and social icons */
+    .footer-top .col-md-6 {
+        text-align: center; /* Center the content */
+        margin-bottom: 8px; /* Reduced from 15px to 8px */
+    }
+
+    /* Ensure social icons are centered */
+    .footer-top .text-md-end {
+        text-align: center !important; /* Override Bootstrap's text-md-end */
+    }
+
+    /* Reduce space between social icons and the divider */
+    .footer-divider {
+        margin-top: 10px; /* Already set, keeping for reference */
+        margin-bottom: 10px; /* Already set, keeping for reference */
+    }
+
+    /* Footer Bottom: Stack and center all elements */
+    .footer-bottom .col-md-4 {
+        text-align: center; /* Center the content */
+        margin-bottom: 8px; /* Reduced from 15px to 8px */
+    }
+
+    /* Reduce space around the logo */
+    .footer-bottom .text-center {
+        margin: 8px 0; /* Reduced from 15px to 8px */
+    }
+
+    /* Adjust the "Created By" text alignment */
+    .footer-bottom .text-md-end {
+        text-align: center !important; /* Override Bootstrap's text-md-end */
+    }
+
+    /* Adjust logo size for small screens */
+    .footer-logo .logo-img-gray {
+        max-height: 30px; /* Already set, keeping for reference */
+    }
+
+    /* Reduce padding for the footer sections */
+    .footer-top {
+        padding: 15px 0; /* Reduced from 20px to 15px */
+    }
+
+    .footer-bottom {
+        padding: 15px 0; /* Reduced from 20px to 15px */
+    }
 }
 
 /* Media queries for production items */
