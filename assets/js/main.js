@@ -54,3 +54,26 @@ document.querySelectorAll('.modal').forEach(modal => {
     if (container) container.innerHTML = '';
   });
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Construct the phone number
+  const phoneNumber = '+381' + ' ' + '60' + ' ' + '7777777';
+  const phoneLink = '381607777777'; // For the tel: link
+  const phonePlaceholder = document.querySelector('.phone-placeholder');
+  phonePlaceholder.href = `tel:${phoneLink}`;
+  phonePlaceholder.textContent = phoneNumber;
+
+  // Construct the email address
+  const email = 'Darkolun' + '@' + 'gmail' + '.' + 'com';
+  const emailPlaceholder = document.querySelector('.email-placeholder');
+  emailPlaceholder.href = `mailto:${email}`;
+  emailPlaceholder.textContent = email;
+
+  // Construct the emaill address
+  const emaill = 'info' + '@' + 'kinokamera' + '.' + 'rs';
+  const emaillPlaceholder = document.querySelector('.emaill-placeholder');
+  emaillPlaceholder.href = `mailto:${emaill}`;
+  emaillPlaceholder.textContent = emaill;
+});
