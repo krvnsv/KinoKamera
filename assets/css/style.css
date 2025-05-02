@@ -54,14 +54,15 @@ p{
 }
 
 .logo-img {
-    height: 20px;
+    height: 30px;
     width: auto;
 }
 .logo-img-gray {
-    height: 20px;
+    height: 25px;
     width: auto;
     filter: grayscale(100%);
 }
+
 
 .section-padding {
     padding-top: 100px;
@@ -181,14 +182,14 @@ p{
 .btn-inverted {
     background-color: white;
     color: grey;
-    border: 1px solid grey;
+    border: 2px solid grey;
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover */
 }
 
 .btn-inverted:hover {
-    background-color: black;
+    background-color: #f3ce13;
     color: white; /* White text for contrast on black background */
-    border-color: black; /* Keep the border consistent */
+    border-color: #f3ce13; /* Keep the border consistent */
 }
 
 
@@ -763,4 +764,26 @@ footer ul {
         border-bottom-left-radius: 1rem !important;
         border-bottom-right-radius: 1rem !important;
     }
+}
+
+
+/* Typewriter Effect */
+.typewriter {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid var(--c-brand);
+    animation: typing 1.5s steps(10, end) forwards, blink 0.75s step-end 1.5s 0 forwards;
+}
+
+/* Typing animation */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 40%; }
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--c-brand); }
 }
