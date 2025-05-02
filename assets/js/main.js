@@ -60,16 +60,56 @@ document.querySelectorAll('.modal').forEach(modal => {
 document.addEventListener('DOMContentLoaded', function() {
   // Construct the phone number
   const phoneNumber = '+381' + ' ' + '60' + ' ' + '7777777';
-  const phoneLink = '381607777777'; // For the tel: link
+  const phoneLink = '381607777777'; // For the tel: link (used only for placeholder)
   const phonePlaceholder = document.querySelector('.phone-placeholder');
-  phonePlaceholder.href = `tel:${phoneLink}`;
-  phonePlaceholder.textContent = phoneNumber;
+  if (phonePlaceholder) {
+      phonePlaceholder.href = `tel:${phoneLink}`;
+      phonePlaceholder.textContent = phoneNumber;
+  }
+  const callButton = document.querySelector('.call-button');
+  if (callButton) {
+      callButton.addEventListener('click', function(e) {
+          e.preventDefault(); // Prevent default link behavior (since href="#")
+          // Copy the phone number to the clipboard
+          navigator.clipboard.writeText(phoneNumber).then(() => {
+              // Temporarily change button text to "Copied!"
+              const originalText = callButton.textContent;
+              callButton.textContent = 'Copied!';
+              callButton.classList.add('copied'); // Add copied class for styling
+              callButton.disabled = true; // Disable button to prevent multiple clicks
+          }).catch(err => {
+              console.error('Failed to copy phone number: ', err);
+              // Fallback: If clipboard API fails, show an alert (optional)
+              alert('Failed to copy phone number. Please copy manually: ' + phoneNumber);
+          });
+      });
+  }
 
   // Construct the email address
-  const email = 'Darkolun' + '@' + 'gmail' + '.' + 'com';
+  const contactEmail = 'darkolun' + '@' + 'gmail' + '.' + 'com';
   const emailPlaceholder = document.querySelector('.email-placeholder');
-  emailPlaceholder.href = `mailto:${email}`;
-  emailPlaceholder.textContent = email;
+  if (emailPlaceholder) {
+      emailPlaceholder.href = `mailto:${contactEmail}`;
+      emailPlaceholder.textContent = contactEmail;
+  }
+  const emailButton = document.querySelector('.email-button');
+  if (emailButton) {
+      emailButton.addEventListener('click', function(e) {
+          e.preventDefault(); // Prevent default link behavior (since href="#")
+          // Copy the email to the clipboard
+          navigator.clipboard.writeText(contactEmail).then(() => {
+              // Temporarily change button text to "Copied!"
+              const originalText = emailButton.textContent;
+              emailButton.textContent = 'Copied!';
+              emailButton.classList.add('copied'); // Add copied class for styling
+              emailButton.disabled = true; // Disable button to prevent multiple clicks
+          }).catch(err => {
+              console.error('Failed to copy email: ', err);
+              // Fallback: If clipboard API fails, show an alert (optional)
+              alert('Failed to copy email. Please copy manually: ' + contactEmail);
+          });
+      });
+  }
 
   // Construct the emaill address
   const emaill = 'info' + '@' + 'kinokamera' + '.' + 'rs';

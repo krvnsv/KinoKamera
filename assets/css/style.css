@@ -157,6 +157,41 @@ p{
     color: black;
 }
 
+.btn-dark {
+    background-color: var(--c-dark);
+    border-color: var(--c-dark);
+    color: var(--c-bright);
+}
+
+.btn-dark:hover {
+    background-color: var(--c-brand);
+    border-color: var(--c-brand);
+    color: var(--c-dark);
+}
+
+.btn-invert {
+    background-color: white;
+    border: 1px solid black;
+    color: grey;
+    pointer-events: none; 
+    cursor: default;
+}
+
+/* Inverted Button Style */
+.btn-inverted {
+    background-color: white;
+    color: grey;
+    border: 1px solid grey;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover */
+}
+
+.btn-inverted:hover {
+    background-color: black;
+    color: white; /* White text for contrast on black background */
+    border-color: black; /* Keep the border consistent */
+}
+
+
 
 /* HERO */
 #hero {
@@ -582,18 +617,6 @@ footer ul {
 .production-description {
     margin-top: 20px;
     margin-bottom: 20px;
-}
-
-.btn-dark {
-    background-color: var(--c-dark);
-    border-color: var(--c-dark);
-    color: var(--c-bright);
-}
-
-.btn-dark:hover {
-    background-color: var(--c-brand);
-    border-color: var(--c-brand);
-    color: var(--c-dark);
 }
 
 
