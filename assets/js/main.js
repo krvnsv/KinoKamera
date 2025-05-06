@@ -117,3 +117,8 @@ document.addEventListener('DOMContentLoaded', function() {
   emaillPlaceholder.href = `mailto:${emaill}`;
   emaillPlaceholder.textContent = emaill;
 });
+
+
+document.fonts.ready.then(() => {
+  document.querySelector('.typewriter').classList.add('start-animation');
+});
