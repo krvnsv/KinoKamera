@@ -59,8 +59,8 @@ document.querySelectorAll('.modal').forEach(modal => {
 
 document.addEventListener('DOMContentLoaded', function() {
   // Construct the phone number
-  const phoneNumber = '+381' + ' ' + '60' + ' ' + '7777777';
-  const phoneLink = '381607777777'; // For the tel: link (used only for placeholder)
+  const phoneNumber = '+381' + ' ' + '60' + ' ' + '7205190';
+  const phoneLink = '+381607205190'; // For the tel: link (used only for placeholder)
   const phonePlaceholder = document.querySelector('.phone-placeholder');
   if (phonePlaceholder) {
       phonePlaceholder.href = `tel:${phoneLink}`;
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Construct the emaill address
-  const emaill = 'info' + '@' + 'kinokamera' + '.' + 'rs';
+  const emaill = 'darkolun' + '@' + 'gmail' + '.' + 'com';
   const emaillPlaceholder = document.querySelector('.emaill-placeholder');
   emaillPlaceholder.href = `mailto:${emaill}`;
   emaillPlaceholder.textContent = emaill;
