@@ -251,13 +251,7 @@ p{
     #hero {
         background-attachment: scroll;
         background-position: center center;
-
-    }
-
-    #hero::before {
-        background-size: 500%; /* Reduce the background image size by 30% to match the hero section */
-        background-position: center center;
-        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
 
