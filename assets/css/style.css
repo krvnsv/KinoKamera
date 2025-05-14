@@ -98,12 +98,28 @@ p{
     height: 100%;
     width: 100%;
   }
+
+  @media (min-width: 1401px) {
+    /* Create 4-column layout for large screens */
+    #portfolio .col-md-6 {
+        width: 25%; /* Force 4 columns */
+    }
+    
+}
   
   @media screen and (max-width: 768px) {
     .image-zoom-wrapper {
-      height: 600px;
+      height: 650px;
     }
   }
+
+  @media (min-width: 768px) and (max-width: 1400px) {
+    .image-zoom-wrapper {
+        height: 650px; /* Adjust height for iPad layout */
+    }
+}
+  
+  
 
 .image-zoom:hover .image-zoom-wrapper img {
     transform: scale(1.15);
@@ -247,7 +263,7 @@ p{
 }
 
 /* Mobile-specific adjustments */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1400px) {
     #hero::before {
         background-attachment: scroll !important; /* Force scroll on mobile */
         background-position: center center;
@@ -428,7 +444,7 @@ p{
 }
 
 /* Mobile fix */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1400px) {
     .parallax-section,
     .parallax-section-2 {
         background-attachment: scroll;
