@@ -50,7 +50,7 @@ img {
     height: auto;
 }
 
-p{
+p {
     font-size: 20px;
     max-width: 1000px; /* Adjust this value to your preferred width */
     margin-left: auto;
@@ -851,3 +851,70 @@ footer ul {
     from, to { border-color: transparent; }
     50% { border-color: var(--c-brand); }
 }
+
+
+
+/* CSS for Filmography Section */
+
+/* Film entries */
+.film-entry {
+    margin-bottom: 50px;
+  }
+  
+  /* Film title */
+  .film-title {
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  /* All section blocks */
+  .film-description,
+  .film-festivals,
+  .film-awards,
+  .serbia-awards {
+    margin-bottom: 30px;
+  }
+  
+  /* Section headings */
+  .film-festivals h5,
+  .film-awards h5,
+  .serbia-awards h5 {
+    margin-bottom: 20px;
+    font-weight: 590;
+  }
+  
+  /* List styling */
+  .festivals-list,
+  .awards-list {
+    padding-left: 20px;
+    list-style-type: none;
+  }
+  
+  .festivals-list li,
+  .awards-list li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 15px;
+    font-size: 20px;
+    max-width: 1000px; /* Adjust this value to your preferred width */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .festivals-list li:before {
+    position: absolute;
+    left: -10px;
+    font-size: 20px;
+    max-width: 1000px; /* Adjust this value to your preferred width */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Award items already have trophy emoji */
+  .awards-list li {
+    padding-left: 0;
+    font-size: 20px;
+    max-width: 1000px; /* Adjust this value to your preferred width */
+    margin-left: auto;
+    margin-right: auto;
+  }
