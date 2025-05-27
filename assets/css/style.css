@@ -109,13 +109,13 @@ p {
   
   @media screen and (max-width: 768px) {
     .image-zoom-wrapper {
-      height: 650px;
+      height: 620px;
     }
   }
 
   @media (min-width: 768px) and (max-width: 1400px) {
     .image-zoom-wrapper {
-        height: 650px; /* Adjust height for iPad layout */
+        height: 660px; /* Adjust height for iPad layout */
     }
 }
   
